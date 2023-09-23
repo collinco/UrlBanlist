@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Hello Extensions",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "service-worker.js",
+    "script": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://google.com/example*",
+        "*://www.google.com/example*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "icons": {}
+}
