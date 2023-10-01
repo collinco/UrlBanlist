@@ -1,24 +1,25 @@
 {
   "manifest_version": 3,
-  "name": "Hello Extensions",
+  "name": "UrlBanlist",
   "version": "1.0",
   "permissions": [
     "activeTab",
     "scripting",
-    "tabs"
+    "tabs",
+    "storage",
+    "history"
   ],
   "action": {
     "default_popup": "popup.html"
   },
   "background": {
-    "service_worker": "service-worker.js",
-    "script": "background.js"
+    "service_worker": "service-worker.js"
   },
   "content_scripts": [
     {
       "matches": [
-        "*://google.com/example*",
-        "*://www.google.com/example*"
+        "*://youtube.com/*",
+        "*://www.youtube.com/*"
       ],
       "js": [
         "content.js"
